@@ -1,0 +1,27 @@
+nav {
+  position: fixed;
+  height: 120px;
+  width: 100%;
+  z-index: 1;
+  background-color: #4056A1;
+  color: #FFFFFF;
+  padding: 1.5em;
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Bungee', cursive;
+  align-self: flex-end;
+}
+
+nav span {
+  position: relative;
+}
+
+#write {
+  font-family: sans-serif;
+}
+
+.fa-angle-double-down {
+  position: absolute;
+  left: 50%;
+  color: rgba(247, 247, 8, 0.817);
+}
