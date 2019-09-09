@@ -1,0 +1,48 @@
+.container {
+  /* border: 2px solid black; */
+  background: inherit;
+  height: 100vh;
+  margin: 0px auto;
+  width: 90%;
+  top: 120px;
+  margin-top: 0;
+  /* border: 1px solid black; */
+  position: relative;
+}
+
+.new-tweet {
+  border: 2px solid black;
+}
+
+main form {
+  width: 80%;
+  display: flex;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.break {
+  width: 100%;
+  height: 0;
+}
+
+form textarea {
+  width: 100%;
+  border-bottom: 5px solid black;
+  margin-bottom: 10px;
+  background: inherit;
+}
+
+form input {
+  color: white;
+  background-color: #4056a1;
+  left: 0;
+  border: 1px white solid;
+  border-radius: 10px;
+  padding: 5px 10px;
+}
+
+main h2 {
+  margin-top: 0px;
+}
