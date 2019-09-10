@@ -9,6 +9,7 @@ main article {
 main article:hover {
   box-shadow: 5px 8px;
   opacity: 1;
+  cursor: pointer;
 }
 
 
@@ -20,6 +21,15 @@ body article header{
   margin-top: 30px;
   width: 88%;
   align-items: center;
+}
+
+body article header div {
+  display: flex;
+  align-items: center;
+}
+
+body article header div img {
+  margin-right: 20px;
 }
 
 
