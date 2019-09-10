@@ -15,6 +15,8 @@ html {
  * Global layout stuff
  */
 
+
+
 body {
   color: #545149;
   background-color: #e8feff;
@@ -29,7 +31,6 @@ body {
  */
 .countLimit {
   color: red;
-  /* font-size: 100px; */
 }
 
 
