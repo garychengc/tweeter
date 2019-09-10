@@ -1,0 +1,53 @@
+main article {
+  border: 2px solid black;
+  width: 90%;
+  margin: 50px auto;
+  transition-duration: 0.5s;
+  opacity: 0.5;
+}
+
+main article:hover {
+  box-shadow: 5px 8px;
+  opacity: 1;
+}
+
+
+body article header{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  margin: 30px auto;
+  margin-top: 30px;
+  width: 88%;
+  align-items: center;
+}
+
+
+.mainContent {
+  width: 90%;
+  border-bottom: 5px solid black;
+  margin: 0px auto;
+  padding-left: 10px;
+  padding-bottom: 20px;
+
+}
+
+body article footer {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  margin: 5px auto;
+  width: 88%;
+  align-items: center;
+  padding-bottom: 15px;
+}
+
+.date, .icon {
+  font-size: 18px;
+}
+
+article header img {
+  height: 100px;
+  width: 100px;
+}
+

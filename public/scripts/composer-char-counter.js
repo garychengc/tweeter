@@ -1,6 +1,6 @@
 $(document).ready(function() {
   let maxWord = 140;
-  $("textarea").keydown(function() {
+  $("textarea").on('keydown',function() {
     let remaining = maxWord - $(this).context.value.length;
     $(this)
       .parent()

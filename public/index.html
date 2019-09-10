@@ -20,14 +20,17 @@
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/tweet.css" type="text/css" />
 
     <!-- External JS -->
     <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/app.js"></script>
-    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
-
+    <script
+      type="text/javascript"
+      src="/scripts/composer-char-counter.js"
+    ></script>
   </head>
 
   <body>
@@ -40,7 +43,7 @@
       </span>
     </nav>
 
-    <header>
+    <header id="realheader">
       <div>
         <img src="/images/cat.png" />
       </div>
@@ -54,16 +57,43 @@
     <main class="container">
       <section class="new-tweet">
         <h2><i>Compose Tweet:</i></h2>
-        <form action='/tweets' method='POST'>
+        <form action="/tweets" method="POST">
           <textarea
             name="text"
             placeholder="What are you humming about?"
           ></textarea>
-          <div class='break'></div>
+          <div class="break"></div>
           <input type="submit" value="Tweet" />
           <span class="counter">140</span>
         </form>
       </section>
+
+      <article>
+        <header>
+          <div>
+              <img src='/images/profile-hex.png' />
+          </div> 
+          <div>@id123</div>
+        </header>
+
+        <!-- <div class="break"></div> -->
+
+        <div class="mainContent">
+          main content, my tweet, blah blah
+          blah...........................................
+        </div>
+
+        <!-- <div class="break"></div> -->
+
+        <footer>
+          <div class='date'>
+            10 days ago
+          </div>
+          <div class='icon'>
+            icons(%^&*##@)
+          </div>
+        </footer>
+      </article>
     </main>
   </body>
 </html>

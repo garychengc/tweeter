@@ -1,12 +1,11 @@
 .container {
-  /* border: 2px solid black; */
+  border: 2px solid black;
   background: inherit;
-  height: 100vh;
+  height: 2000px;
   margin: 0px auto;
   width: 90%;
   top: 120px;
   margin-top: 0;
-  /* border: 1px solid black; */
   position: relative;
 }
 
@@ -15,7 +14,7 @@
 }
 
 main form {
-  width: 80%;
+  width: 90%;
   display: flex;
   margin: 0 auto;
   flex-wrap: wrap;
