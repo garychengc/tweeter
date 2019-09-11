@@ -8,6 +8,10 @@
   position: relative;
 }
 
+.show {
+  color: red;
+}
+
 
 main form {
   width: 90%;

@@ -99,8 +99,6 @@ $(document).ready(() => {
       alert("You haven't entered anything yet");
     } else {
       let str = $("form").serialize(); //=> input 
-
-
       this.reset();
       $(this)
         .find("span")
@@ -114,6 +112,14 @@ $(document).ready(() => {
           loadTweets();
         }
       });
-    }
+    };
   });
+
+  let isClosed = true;
+
+  $('.fa-angle-double-down').on('click', function (event) {
+    $('.new-tweet').slideToggle();
+  });
+
+
 });
