@@ -4,15 +4,23 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+const escape =  function(str) {
+  let div = document.createElement('div');
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+}
+
+
 const renderTweets = async function(tweets) {
   try {
-    let appendData = []; 
+    let appendData = [];
     await tweets.forEach(tweet => {
       appendData.unshift(createTweetElement(tweet));
     });
-    $("#tweetContainer").append(appendData.join(''));
-  } catch {error => console.log(error)};
-  
+    $("#tweetContainer").append(appendData);
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 //put each tweet into the html format
@@ -27,9 +35,11 @@ const createTweetElement = tweet => {
     result = Math.floor(result);
     result = `${result} days ago`;
   } else {
-    result = Math.floor(result * 24)
+    result = Math.floor(result * 24);
     result = `${result} hours ago`;
   }
+
+  const userInput = tweet.content.text;
 
   return `
       <article>
@@ -41,7 +51,7 @@ const createTweetElement = tweet => {
           <div class='tag'>${tweet.user.handle}</div>
         </header>
   
-        <div class='mainContent'>${tweet.content.text}</div>
+        <div class='mainContent'>${escape(userInput)}</div>
   
         <footer>
           <div class='date'>
@@ -81,13 +91,15 @@ $(document).ready(() => {
     event.preventDefault();
     const wordCount = $(this).find("span");
     const textArea = $(this).find("textarea");
+    // console.log(textArea.val());
 
     if (wordCount.hasClass("countLimit")) {
       alert(`Over the word count limit`);
     } else if (textArea.val() === "" || textArea.val() === null) {
       alert("You haven't entered anything yet");
     } else {
-      let str = $("form").serialize();
+      let str = $("form").serialize(); //=> input 
+
 
       this.reset();
       $(this)
@@ -98,7 +110,7 @@ $(document).ready(() => {
         type: "POST",
         data: str,
         success: function() {
-          $('#tweetContainer').empty();
+          $("#tweetContainer").empty();
           loadTweets();
         }
       });
