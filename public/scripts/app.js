@@ -4,6 +4,7 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+//Get the tweet data from the database and render them
 const renderTweets = function(tweets) {
   tweets.forEach(tweet => {
     $("#tweetContainer").append(createTweetElement(tweet));
@@ -74,14 +75,19 @@ const tweetData = [
   }
 ];
 
+//Ajax request
+//call the tweetdata rendering function
 $(document).ready(() => {
   renderTweets(tweetData);
+
+  $("#formSubmit").submit(function(event) {
+    event.preventDefault();
+    let str = $("form").serialize();
+    // console.log(str);
+    $.ajax({
+      url: '/tweets',
+      type: 'POST',
+      data: str,
+    });
+  });
 });
-
-// const $tweet = createTweetElement(tweetData);
-
-// console.log($tweet);
-
-// Test / driver code (temporary)
-// console.log($tweet); // to see what it looks like
-// $(".container").append($tweet); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
