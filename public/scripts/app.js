@@ -4,13 +4,13 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-//Get the tweet data from the database and render them
 const renderTweets = function(tweets) {
   tweets.forEach(tweet => {
     $("#tweetContainer").append(createTweetElement(tweet));
   });
 };
 
+//put each tweet into the html format
 const createTweetElement = tweet => {
   const currentTime = new Date();
   const diff = currentTime.getTime() - tweet.created_at;
@@ -48,6 +48,20 @@ const createTweetElement = tweet => {
       `;
 };
 
+//fetching tweets with Ajax
+const loadTweets = () => {
+  $.ajax({
+    url: '/tweets',
+    type: 'GET',
+    success: function(res) {
+      renderTweets(res);
+    }
+  });
+};
+
+
+
+
 // Test / driver code (temporary). Eventually will get this from the server.
 const tweetData = [
   {
@@ -78,7 +92,7 @@ const tweetData = [
 //Ajax request
 //call the tweetdata rendering function
 $(document).ready(() => {
-  renderTweets(tweetData);
+  loadTweets();
 
   $("#formSubmit").submit(function(event) {
     event.preventDefault();
@@ -88,7 +102,7 @@ $(document).ready(() => {
     $.ajax({
       url: '/tweets',
       type: 'POST',
-      data: str,
+      data: str
     });
   });
 });
