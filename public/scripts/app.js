@@ -6,9 +6,7 @@
 
 const renderTweets = function(tweets) {
   tweets.forEach(tweet => {
-    $(document).ready(() => {
-      $("#tweetContainer").append(createTweetElement(tweet));
-    });
+    $("#tweetContainer").append(createTweetElement(tweet));
   });
 };
 
@@ -76,7 +74,9 @@ const tweetData = [
   }
 ];
 
-renderTweets(tweetData);
+$(document).ready(() => {
+  renderTweets(tweetData);
+});
 
 // const $tweet = createTweetElement(tweetData);
 
