@@ -5,43 +5,49 @@
  */
 
 const renderTweets = function(tweets) {
-  // const $tweet = $("<article>").addClass('tweet');
   tweets.forEach(tweet => {
     $(document).ready(() => {
-      $('#tweetContainer').append(createTweetElement(tweet));
-    })
+      $("#tweetContainer").append(createTweetElement(tweet));
+    });
   });
-  // loops through tweets
-  // calls createTweetElement for each tweet
-  // takes return value and appends it to the tweets container
 };
 
 const createTweetElement = tweet => {
-  return (`
+  const currentTime = new Date();
+  const diff = currentTime.getTime() - tweet.created_at;
+  let result = diff / (1000 * 60 * 60 * 24);
+  if (result >= 365) {
+    result = Math.floor(result / 365);
+    result = `${result} years ago`;
+  } else {
+    result = `${result} days ago`;
+  }
+  return `
       <article>
         <header>
           <div>
             <img src=${tweet.user.avatars} />
-            <div>${tweet.user.name}
+            <div>${tweet.user.name}</div>
           </div>
           <div>${tweet.user.handle}</div>
         </header>
   
-        <div class='mainContent'>${tweet.content}</div>
+        <div class='mainContent'>${tweet.content.text}</div>
   
         <footer>
           <div class='date'>
-            ${tweet.created_at}
+            ${result}
           </div>
           <div class='icon'>
-            icons(%$@#$@#$)
+            <i class="fas fa-flag"></i>
+            <i class="fas fa-retweet"></i>
+            <i class="fas fa-heart"></i>
           </div>
         </footer>
   
       </article>
-      `);
+      `;
 };
-
 
 // Test / driver code (temporary). Eventually will get this from the server.
 const tweetData = [
@@ -56,14 +62,25 @@ const tweetData = [
         "If I have seen further it is by standing on the shoulders of giants"
     },
     created_at: 1461116232227
+  },
+  {
+    user: {
+      name: "Descartes",
+      avatars: "https://i.imgur.com/nlhLi3I.png",
+      handle: "@rd"
+    },
+    content: {
+      text: "Je pense , donc je suis"
+    },
+    created_at: 1461113959088
   }
 ];
 
+renderTweets(tweetData);
 
 // const $tweet = createTweetElement(tweetData);
 
 // console.log($tweet);
-renderTweets(tweetData);
 
 // Test / driver code (temporary)
 // console.log($tweet); // to see what it looks like
