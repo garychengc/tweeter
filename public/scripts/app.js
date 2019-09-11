@@ -83,7 +83,8 @@ $(document).ready(() => {
   $("#formSubmit").submit(function(event) {
     event.preventDefault();
     let str = $("form").serialize();
-    // console.log(str);
+    this.reset();
+    $(this).find('span').html(140);
     $.ajax({
       url: '/tweets',
       type: 'POST',
