@@ -1,7 +1,7 @@
 $(document).ready(function() {
   let maxWord = 140;
-  $("textarea").on('keydown',function() {
-    let remaining = maxWord - $(this).context.value.length;
+  $("textarea").on('input',function() {
+    let remaining = maxWord - $(this).val().length;
     $(this)
       .parent()
       .find("span")

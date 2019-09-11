@@ -4,10 +4,16 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-const renderTweets = function(tweets) {
-  tweets.forEach(tweet => {
-    $("#tweetContainer").append(createTweetElement(tweet));
-  });
+const renderTweets = async function(tweets) {
+  try {
+    const appendData = []; 
+    await tweets.forEach(tweet => {
+      appendData.push(createTweetElement(tweet));
+    });
+
+    $("#tweetContainer").append(appendData.join(''));
+  } catch {error => console.log(error)};
+  
 };
 
 //put each tweet into the html format
@@ -21,6 +27,7 @@ const createTweetElement = tweet => {
   } else {
     result = `${result} days ago`;
   }
+
   return `
       <article>
         <header>
@@ -28,7 +35,7 @@ const createTweetElement = tweet => {
             <img src=${tweet.user.avatars} />
             <div>${tweet.user.name}</div>
           </div>
-          <div>${tweet.user.handle}</div>
+          <div class='tag'>${tweet.user.handle}</div>
         </header>
   
         <div class='mainContent'>${tweet.content.text}</div>
@@ -51,43 +58,43 @@ const createTweetElement = tweet => {
 //fetching tweets with Ajax
 const loadTweets = () => {
   $.ajax({
-    url: '/tweets',
-    type: 'GET',
+    url: "/tweets",
+    type: "GET",
     success: function(res) {
       renderTweets(res);
+    },
+    error: function(xhr, ajaxOptions, thrownError) {
+      console.log(thrownError);
     }
   });
 };
 
-
-
-
 // Test / driver code (temporary). Eventually will get this from the server.
-const tweetData = [
-  {
-    user: {
-      name: "Newton",
-      avatars: "https://i.imgur.com/73hZDYK.png",
-      handle: "@SirIsaac"
-    },
-    content: {
-      text:
-        "If I have seen further it is by standing on the shoulders of giants"
-    },
-    created_at: 1461116232227
-  },
-  {
-    user: {
-      name: "Descartes",
-      avatars: "https://i.imgur.com/nlhLi3I.png",
-      handle: "@rd"
-    },
-    content: {
-      text: "Je pense , donc je suis"
-    },
-    created_at: 1461113959088
-  }
-];
+// const tweetData = [
+//   {
+//     user: {
+//       name: "Newton",
+//       avatars: "https://i.imgur.com/73hZDYK.png",
+//       handle: "@SirIsaac"
+//     },
+//     content: {
+//       text:
+//         "If I have seen further it is by standing on the shoulders of giants"
+//     },
+//     created_at: 1461116232227
+//   },
+//   {
+//     user: {
+//       name: "Descartes",
+//       avatars: "https://i.imgur.com/nlhLi3I.png",
+//       handle: "@rd"
+//     },
+//     content: {
+//       text: "Je pense , donc je suis"
+//     },
+//     created_at: 1461113959088
+//   }
+// ];
 
 //Ajax request
 //call the tweetdata rendering function
@@ -96,13 +103,28 @@ $(document).ready(() => {
 
   $("#formSubmit").submit(function(event) {
     event.preventDefault();
-    let str = $("form").serialize();
-    this.reset();
-    $(this).find('span').html(140);
-    $.ajax({
-      url: '/tweets',
-      type: 'POST',
-      data: str
-    });
+    const wordCount = $(this).find("span");
+    const textArea = $(this).find("textarea");
+
+    if (wordCount.hasClass("countLimit")) {
+      alert(`Over the word count limit`);
+    } else if (textArea.val() === "" || textArea.val() === null) {
+      alert("You haven't entered anything yet");
+    } else {
+      let str = $("form").serialize();
+      
+      this.reset();
+      $(this)
+        .find("span")
+        .html(140);
+      $.ajax({
+        url: "/tweets",
+        type: "POST",
+        data: str,
+        success: function() {
+          loadTweets();
+        }
+      });
+    }
   });
 });

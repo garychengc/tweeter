@@ -1,5 +1,4 @@
 .container {
-  border: 2px solid black;
   background: inherit;
   height: 2000px;
   margin: 0px auto;
@@ -9,9 +8,6 @@
   position: relative;
 }
 
-.new-tweet {
-  border: 2px solid black;
-}
 
 main form {
   width: 90%;
@@ -27,10 +23,13 @@ main form {
 }
 
 form textarea {
+  height: 50px;
   width: 100%;
+  border: none;
   border-bottom: 5px solid black;
   margin-bottom: 10px;
   background: inherit;
+  padding-bottom: 0;
 }
 
 form input {
