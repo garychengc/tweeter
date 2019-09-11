@@ -55,7 +55,8 @@
 
     <!-- Page-specific (main) content here -->
     <main class="container">
-      <section class="new-tweet">
+      <div class='hide' id='errormsg'></div>
+      <section class="new-tweet hide">
         <form action="/tweets" method="POST" id="formSubmit">
           <textarea
             name="text"

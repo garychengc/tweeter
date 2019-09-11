@@ -94,10 +94,17 @@ $(document).ready(() => {
     // console.log(textArea.val());
 
     if (wordCount.hasClass("countLimit")) {
-      alert(`Over the word count limit`);
+      $('#errormsg').html('Over the word count limit');
+      $('#errormsg').toggleClass('hide');
+
+      // alert(`Over the word count limit`);
     } else if (textArea.val() === "" || textArea.val() === null) {
-      alert("You haven't entered anything yet");
+      $('#errormsg').html("You haven't entered anything yet.");
+      $('#errormsg').toggleClass('hide');
+
+      // alert("You haven't entered anything yet");
     } else {
+      $('#errormsg').addClass('hide')
       let str = $("form").serialize(); //=> input 
       this.reset();
       $(this)
@@ -115,11 +122,13 @@ $(document).ready(() => {
     };
   });
 
-  let isClosed = true;
+
 
   $('.fa-angle-double-down').on('click', function (event) {
-    $('.new-tweet').slideToggle();
-  });
-
+      $('#errormsg').addClass('hide');
+      $('.new-tweet').toggleClass('hide');
+      $('textarea').focus();
+    });
+    // $('.new-tweet').slideToggle();
 
 });

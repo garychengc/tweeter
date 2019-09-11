@@ -8,8 +8,16 @@
   position: relative;
 }
 
-.show {
+.hide {
+  display: none;
+}
+
+#errormsg {
+  margin: 0px auto;
+  margin-bottom: 50px;
   color: red;
+  text-align: center;
+  border: 2px solid red;
 }
 
 
