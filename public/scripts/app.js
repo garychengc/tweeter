@@ -4,12 +4,11 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-const escape =  function(str) {
-  let div = document.createElement('div');
+const escape = function(str) {
+  let div = document.createElement("div");
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
-}
-
+};
 
 const renderTweets = async function(tweets) {
   try {
@@ -91,21 +90,16 @@ $(document).ready(() => {
     event.preventDefault();
     const wordCount = $(this).find("span");
     const textArea = $(this).find("textarea");
-    // console.log(textArea.val());
 
     if (wordCount.hasClass("countLimit")) {
-      $('#errormsg').html('Over the word count limit');
-      $('#errormsg').toggleClass('hide');
-
-      // alert(`Over the word count limit`);
+      $("#errormsg").html(" Too Long. Over the Limit of 140 chars! ");
+      $("#errormsg").removeClass("hide");
     } else if (textArea.val() === "" || textArea.val() === null) {
-      $('#errormsg').html("You haven't entered anything yet.");
-      $('#errormsg').toggleClass('hide');
-
-      // alert("You haven't entered anything yet");
+      $("#errormsg").html(" Please Type Something ");
+      $("#errormsg").removeClass("hide");
     } else {
-      $('#errormsg').addClass('hide')
-      let str = $("form").serialize(); //=> input 
+      $("#errormsg").addClass("hide");
+      let str = $("form").serialize();
       this.reset();
       $(this)
         .find("span")
@@ -119,16 +113,13 @@ $(document).ready(() => {
           loadTweets();
         }
       });
-    };
+    }
   });
 
-
-
-  $('.fa-angle-double-down').on('click', function (event) {
-      $('#errormsg').addClass('hide');
-      $('.new-tweet').toggleClass('hide');
-      $('textarea').focus();
-    });
-    // $('.new-tweet').slideToggle();
-
+  //opens up the new tweet section when click the double-down arrow on the top right corner.
+  $(".fa-angle-double-down").on("click", function(e) {
+    $("#errormsg").addClass("hide");
+    $(".new-tweet").toggleClass("hide");
+    $("textarea").focus();
+  });
 });
