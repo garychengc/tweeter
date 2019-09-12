@@ -6,6 +6,10 @@ main article {
   opacity: 0.3;
 }
 
+#tweetContainer {
+  align-self: center;
+}
+
 main article:hover {
   box-shadow: 5px 8px;
   opacity: 1;

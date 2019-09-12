@@ -9,7 +9,6 @@ nav {
   display: flex;
   justify-content: space-between;
   font-family: 'Bungee', cursive;
-  align-self: flex-end;
 }
 
 nav span {
@@ -18,11 +17,9 @@ nav span {
 
 #write {
   font-family: sans-serif;
-}
-
-#write {
   cursor: pointer;
 }
+
 
 .fa-angle-double-down {
   position: absolute;
