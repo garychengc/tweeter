@@ -1,6 +1,5 @@
 .container {
   background: inherit;
-  height: 2000px;
   margin: 0px auto;
   width: 90%;
   top: 120px;
@@ -22,7 +21,6 @@
   padding: 10px;
   width: 60%;
 }
-
 
 main form {
   width: 90%;

@@ -55,19 +55,20 @@
 
     <!-- Page-specific (main) content here -->
     <main class="container">
-      <div class='hide' id='errormsg'></div>
+      <div class="hide" id="errormsg"></div>
       <section class="new-tweet hide">
         <form action="/tweets" method="POST" id="formSubmit">
           <textarea
             name="text"
             placeholder="What are you humming about?"
-            wrap='soft'
+            wrap="soft"
           ></textarea>
           <div class="break"></div>
           <input type="submit" value="Tweet" />
           <span class="counter">140</span>
         </form>
       </section>
+      <i class="fas fa-angle-double-up invisible" id="scrollUp"></i>
 
       <section id="tweetContainer"></section>
     </main>

@@ -117,7 +117,7 @@ $(document).ready(() => {
   });
 
   //opens up the new tweet section when click the double-down arrow on the top right corner.
-  $(".fa-angle-double-down").on("click", function(e) {
+  $("#write").on("click", function(e) {
     $("#errormsg").addClass("hide");
     $(".new-tweet").toggleClass("hide");
     $("textarea").focus();

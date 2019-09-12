@@ -20,10 +20,13 @@ nav span {
   font-family: sans-serif;
 }
 
+#write {
+  cursor: pointer;
+}
+
 .fa-angle-double-down {
   position: absolute;
   left: 50%;
   color: rgba(247, 247, 8, 0.817);
-  cursor: pointer;
 }
 
