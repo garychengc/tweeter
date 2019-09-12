@@ -90,15 +90,17 @@ $(document).ready(() => {
     event.preventDefault();
     const wordCount = $(this).find("span");
     const textArea = $(this).find("textarea");
+    const errorMessage = $('#errormsg');
 
     if (wordCount.hasClass("countLimit")) {
-      $("#errormsg").html(" Too Long. Over the Limit of 140 chars! ");
-      $("#errormsg").removeClass("hide");
+      errorMessage.html(" Too Long. Over the Limit of 140 chars! ");
+      errorMessage.removeClass("hide");
+
     } else if (textArea.val() === "" || textArea.val() === null) {
-      $("#errormsg").html(" Please Type Something ");
-      $("#errormsg").removeClass("hide");
+      errorMessage.html(" Please Type Something ");
+      errorMessage.removeClass("hide");
     } else {
-      $("#errormsg").addClass("hide");
+      errorMessage.addClass("hide");
       let str = $("form").serialize();
       this.reset();
       $(this)

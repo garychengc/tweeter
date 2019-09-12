@@ -9,24 +9,23 @@ nav {
   display: flex;
   justify-content: space-between;
   font-family: 'Bungee', cursive;
-}
 
-nav span {
-  position: relative;
-}
+  span {
+    position: relative;
+  }
 
-#write {
-  font-family: sans-serif;
-}
+  #write {
+    font-family: sans-serif;
+  }
 
-#write:hover{
-  cursor: pointer;
-}
+  #write:hover {
+    cursor: pointer;
+  }
 
-
-.fa-angle-double-down {
-  position: absolute;
-  left: 50%;
-  color: rgba(247, 247, 8, 0.817);
+  .fa-angle-double-down {
+    position: absolute;
+    left: 50%;
+    color: rgba(247, 247, 8, 0.817);
+  }
 }
 

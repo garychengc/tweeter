@@ -1,0 +1,217 @@
+#realheader {
+  position: relative;
+  top: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 350px;
+  padding-top: 20px;
+  background-color: #46bbe9;
+  background-image: url("https://www.transparenttextures.com/patterns/cream-paper.png");
+  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */ }
+
+#profilepic {
+  width: 300px;
+  height: 200px;
+  border: 2px white solid;
+  border-radius: 20px; }
+
+nav {
+  position: fixed;
+  height: 120px;
+  width: 100%;
+  z-index: 1;
+  background-color: #46bbe9;
+  color: #FFFFFF;
+  padding: 1.5em;
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Bungee', cursive; }
+  nav span {
+    position: relative; }
+  nav #write {
+    font-family: sans-serif; }
+  nav #write:hover {
+    cursor: pointer; }
+  nav .fa-angle-double-down {
+    position: absolute;
+    left: 50%;
+    color: rgba(247, 247, 8, 0.817); }
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  background: inherit;
+  margin: 0px auto;
+  width: 100%;
+  top: 120px;
+  margin-top: 0;
+  position: relative;
+  justify-content: center; }
+
+.hide {
+  display: none; }
+
+#errormsg {
+  margin: 30px auto;
+  color: red;
+  border: 2px solid red;
+  text-align: center;
+  border-radius: 5px;
+  padding: 10px;
+  width: 60%; }
+
+.new-tweet {
+  width: 100%;
+  display: hidden; }
+
+main form {
+  width: 90%;
+  display: flex;
+  margin: 0px auto;
+  margin-top: 50px;
+  flex-wrap: wrap;
+  justify-content: space-between; }
+
+.break {
+  width: 100%;
+  height: 0; }
+
+form textarea {
+  display: flex;
+  height: 60px;
+  width: 100%;
+  border: none;
+  border-bottom: 5px solid black;
+  margin-bottom: 10px;
+  background: inherit;
+  padding-bottom: 0; }
+
+form input {
+  color: white;
+  background-color: #4056a1;
+  left: 0;
+  border: 1px white solid;
+  border-radius: 10px;
+  padding: 5px 10px; }
+
+main h2 {
+  margin-top: 0px; }
+
+main article {
+  border: 5px solid black;
+  width: 90%;
+  margin: 50px auto;
+  transition-duration: 0.5s;
+  opacity: 0.3; }
+
+#tweetContainer {
+  align-self: center; }
+
+main article:hover {
+  box-shadow: 5px 8px;
+  opacity: 1;
+  cursor: pointer; }
+
+main article .tag {
+  visibility: hidden; }
+
+main article:hover .tag {
+  visibility: visible; }
+
+body article header {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  margin: 30px auto;
+  margin-top: 30px;
+  width: 88%;
+  align-items: center; }
+
+body article header div {
+  display: flex;
+  align-items: center; }
+
+body article header div img {
+  margin-right: 20px; }
+
+.mainContent {
+  width: 90%;
+  border-bottom: 5px solid black;
+  margin: 0px auto;
+  padding-left: 10px;
+  padding-bottom: 20px; }
+
+body article footer {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  margin: 5px auto;
+  width: 88%;
+  align-items: center;
+  padding-bottom: 15px; }
+
+.date,
+.icon {
+  font-size: 18px; }
+
+article header img {
+  height: 100px;
+  width: 100px; }
+
+#scrollUp {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 10px solid #666666;
+  height: 60px;
+  width: 60px;
+  border-radius: 100%;
+  background-color: #666666;
+  color: white;
+  font-size: 40px;
+  right: 10px;
+  bottom: 30px;
+  cursor: pointer; }
+
+.invisible {
+  visibility: hidden; }
+
+/*
+ * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+ * https://css-tricks.com/international-box-sizing-awareness-day/
+ * Do not modify these two selectors, please
+ */
+html {
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+  box-sizing: inherit; }
+
+/*
+ * Global layout stuff
+ */
+body {
+  color: #545149;
+  background-color: #e8feff;
+  background-image: url("https://www.transparenttextures.com/patterns/cream-paper.png");
+  font-size: 24px;
+  font-family: 'Source Sans Pro', sans-serif;
+  display: flex;
+  flex-wrap: wrap; }
+
+/*
+ * Additional CSS can be defined below or in other CSS files, as per instructions
+ */
+.countLimit {
+  color: red; }
+
+@media screen and (min-width: 768px) {
+  #realheader {
+    width: 40%;
+    margin: 20px 4%; }
+  .container {
+    width: 50%;
+    margin-top: 80px; } }

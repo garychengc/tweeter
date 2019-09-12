@@ -1,0 +1,93 @@
+main article {
+  border: 5px solid black;
+  width: 90%;
+  margin: 50px auto;
+  transition-duration: 0.5s;
+  opacity: 0.3;
+}
+
+#tweetContainer {
+  align-self: center;
+}
+
+main article:hover {
+  box-shadow: 5px 8px;
+  opacity: 1;
+  cursor: pointer;
+}
+
+main article .tag {
+  visibility: hidden;
+}
+
+main article:hover .tag {
+  visibility: visible;
+}
+
+body article header {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  margin: 30px auto;
+  margin-top: 30px;
+  width: 88%;
+  align-items: center;
+}
+
+body article header div {
+  display: flex;
+  align-items: center;
+}
+
+body article header div img {
+  margin-right: 20px;
+}
+
+.mainContent {
+  width: 90%;
+  border-bottom: 5px solid black;
+  margin: 0px auto;
+  padding-left: 10px;
+  padding-bottom: 20px;
+}
+
+body article footer {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  margin: 5px auto;
+  width: 88%;
+  align-items: center;
+  padding-bottom: 15px;
+}
+
+.date,
+.icon {
+  font-size: 18px;
+}
+
+article header img {
+  height: 100px;
+  width: 100px;
+}
+
+#scrollUp {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 10px solid #666666;
+  height: 60px;
+  width: 60px;
+  border-radius: 100%;
+  background-color: #666666;
+  color: white;
+  font-size: 40px;
+  right: 10px;
+  bottom: 30px;
+  cursor: pointer;
+}
+
+.invisible {
+  visibility: hidden;
+}
