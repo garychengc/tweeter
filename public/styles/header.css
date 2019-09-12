@@ -13,7 +13,7 @@
 /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 }
 
-header img {
+#profilepic {
   width: 300px;
   height: 250px;
   border: 2px white solid;
