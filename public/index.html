@@ -3,7 +3,10 @@
   <head>
     <!-- Meta Information -->
     <title>Tweeter - Home Page</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
+    />
 
     <!-- External CSS -->
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
@@ -34,9 +37,9 @@
     ></script>
     <script type="text/javascript" src="/scripts/app.js"></script>
   </head>
-
   <body>
-    <!-- Top nav bar (fixed) -->
+    
+    <!-- Top nav bar -->
     <nav>
       <span>tweeter</span>
       <span id="write">
@@ -44,25 +47,23 @@
         <i class="fas fa-angle-double-down"></i>
       </span>
     </nav>
-
     <header id="realheader">
       <div>
-        <img id='profilepic' src="/images/cat.png" />
+        <img id="profilepic" src="/images/cat.png" />
       </div>
-      <!-- <br /> -->
       <div>
         <h2>Lumi</h2>
       </div>
     </header>
 
-    <!-- Page-specific (main) content here -->
+    <!-- Main content here -->
     <main class="container">
       <div class="hide" id="errormsg"></div>
       <section class="new-tweet hide">
         <form action="/tweets" method="POST" id="formSubmit">
           <textarea
             name="text"
-            placeholder="What are you humming about?"
+            placeholder="Anything in mind that you wanna share?"
             wrap="soft"
           ></textarea>
           <div class="break"></div>
@@ -71,7 +72,6 @@
         </form>
       </section>
       <i class="fas fa-angle-double-up invisible" id="scrollUp"></i>
-
       <section id="tweetContainer"></section>
     </main>
   </body>

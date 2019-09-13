@@ -1,15 +1,11 @@
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
-
+//Check if the input is valid, not cross-site scripting
 const escape = function(str) {
   let div = document.createElement("div");
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
 };
 
+//append the tweets to the html file.
 const renderTweets = async function(tweets) {
   try {
     let appendData = [];
@@ -49,9 +45,7 @@ const createTweetElement = tweet => {
           </div>
           <div class='tag'>${tweet.user.handle}</div>
         </header>
-  
         <div class='mainContent'>${escape(userInput)}</div>
-  
         <footer>
           <div class='date'>
             ${result}
@@ -62,7 +56,6 @@ const createTweetElement = tweet => {
             <i class="fas fa-heart"></i>
           </div>
         </footer>
-  
       </article>
       `;
 };
@@ -86,16 +79,16 @@ const loadTweets = () => {
 $(document).ready(() => {
   loadTweets();
 
+  //Add event listener for the submit button
   $("#formSubmit").submit(function(event) {
     event.preventDefault();
     const wordCount = $(this).find("span");
     const textArea = $(this).find("textarea");
-    const errorMessage = $('#errormsg');
+    const errorMessage = $("#errormsg");
 
     if (wordCount.hasClass("countLimit")) {
       errorMessage.html(" Too Long. Over the Limit of 140 chars! ");
       errorMessage.removeClass("hide");
-
     } else if (textArea.val() === "" || textArea.val() === null) {
       errorMessage.html(" Please Type Something ");
       errorMessage.removeClass("hide");
@@ -119,7 +112,7 @@ $(document).ready(() => {
   });
 
   //opens up the new tweet section when click the double-down arrow on the top right corner.
-  $("#write").on("click", function(e) {
+  $("#write").on("click", function() {
     $("#errormsg").addClass("hide");
     $(".new-tweet").toggleClass("hide");
     $("textarea").focus();
